@@ -1,0 +1,52 @@
+.search-box {
+    background-color: #fff;
+    padding: 30px 40px;
+    font-weight: 300;
+}
+
+.check-box {
+    display: flex;
+
+    &__item + &__item {
+        margin-left: 40px
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        input {
+            border: 1px solid var(--light-gray-color);
+            height: 23px;
+            width: 23px;
+            -webkit-appearance: none;
+            outline: none;
+            border-radius: 4px;
+
+            &:checked {
+                background-image: url("https://www.webmotors.com.br/assets/img/icon/check-white.svg");
+                background-color: var(--color-primary);
+                background-position: center center;
+                background-repeat: no-repeat;
+                border-color: var(--color-primary)
+            }
+        }
+
+        label {
+            margin-left: 10px;
+        }
+    }
+}
+
+
+.filters {
+    display: flex;
+    margin: 10px 0;
+
+    &__fields + &__fields {
+        margin-left: 20px
+    }
+
+    &__fields {
+        width: 100%
+    }
+}

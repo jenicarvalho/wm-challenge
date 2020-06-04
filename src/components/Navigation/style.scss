@@ -1,0 +1,51 @@
+.navigation {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+
+    &__buy-links {
+        display: flex;
+        align-items: baseline;
+    }
+
+    &__item {
+        height: 50px;
+        min-width: 150px;
+        cursor: pointer;
+
+        & + .navigation__item {
+            margin-left: 20px;
+        }
+
+        &:hover {
+            .navigation__type { 
+                color: var(--color-primary);
+                border-bottom-color: var(--color-primary);
+            }
+        }
+    }
+
+    &__buy, &__type {
+        display: block;
+        color: var(--light-gray-color);
+        text-transform: uppercase;
+    }
+
+    &__buy {
+        font-size: 13px;
+        font-weight: 300;
+    }
+
+    &__type {
+        font-size: 20px;
+        font-weight: 500;
+        padding-bottom: 10px;
+        border-bottom: 2px solid var(--light-gray-color);
+    }
+
+    &__sell-my-car {
+        padding: 10px 30px;
+        color: var(--color-secondary);
+        border: 2px solid var(--color-secondary);
+    }
+}
