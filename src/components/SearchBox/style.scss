@@ -2,10 +2,31 @@
     background-color: #fff;
     padding: 30px 40px;
     font-weight: 300;
+
+    &__action-buttons {
+        display: flex;
+        justify-content: flex-end;
+
+        button {
+            font-size: 25px;
+            padding: 12px 90px;
+            background-color: var(--color-primary);
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            transition: background 0.2s ease;
+            cursor: pointer;
+
+            &:hover {
+                background-color: darken(#f3123c, 15)
+            }
+        }
+    }
 }
 
 .check-box {
     display: flex;
+    margin-bottom: 20px;
 
     &__item + &__item {
         margin-left: 40px
@@ -32,6 +53,7 @@
         }
 
         label {
+            cursor: pointer;
             margin-left: 10px;
         }
     }
@@ -40,13 +62,39 @@
 
 .filters {
     display: flex;
-    margin: 10px 0;
 
     &__fields + &__fields {
         margin-left: 20px
     }
 
     &__fields {
-        width: 100%
+        width: 100%;
+
+        > div {
+            margin-bottom: 20px;
+        }
+
+        &--location {
+            display: flex;
+
+            .input-field { 
+                flex: 3;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+            > div { 
+                flex: 2;
+            }
+            .react-select__control {
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+            }
+        }
+
+        &--half {
+            display: flex;
+            > div { flex: 1 }
+            > div:nth-child(2) { margin-left: 20px; }
+        }
     }
 }

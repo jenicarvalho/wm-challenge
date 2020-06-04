@@ -1,6 +1,9 @@
 .input-field {
-    border: 1px solid var(--light-gray-color);
-    height: 30px;
-    outline: none;
+    border: 1px solid var(--input-border-color);
+    min-height: 36px;
+    line-height: normal;
     border-radius: 4px;
+    padding: 0 8px;
+    color: var(--input-color);
+    font-weight: 300;
 }
