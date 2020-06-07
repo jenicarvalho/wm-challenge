@@ -3,6 +3,7 @@
     display: flex;
     justify-content: space-between;
 
+
     &__buy-links {
         display: flex;
         align-items: baseline;
@@ -47,5 +48,18 @@
         padding: 10px 30px;
         color: var(--color-secondary);
         border: 2px solid var(--color-secondary);
+    }
+
+
+    @media (max-width: 767px) {
+        display: block;
+
+        &__item {
+            min-width: auto;
+        }
+        
+        &__sell-my-car {
+            margin: 5px 0
+        }
     }
 }

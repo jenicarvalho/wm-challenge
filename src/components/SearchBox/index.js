@@ -7,12 +7,16 @@ import http from '../../services/api'
 
 import "./style.scss"
 
+
 function SearchBox() {
 
     const [makes, setMake] = useState([{}])
     const [models, setModels] = useState([{}])
     const [versions, setVersion] = useState([{}])
-    const [vehicles, setVehicles] = useState([{}])
+
+    /**
+    *  Com mais tempo usaria o redux saga para as requisições
+    */
 
      async function handleModels(model) {
         const parser = (version) => ({ label: version.Name, value: version.MakeID })
@@ -24,15 +28,17 @@ function SearchBox() {
         await http.get(`/Model?MakeID=${make.value}`).then(response => setModels(response.data.map(parser)))
     }
 
-    // useEffect(() => {
-    //     async function fetchData() {
-    //         const parser = (maker) => ({ label: maker.Name, value: maker.ID })
-    //         await http.get("/Make").then(response => setMake(response.data.map(parser)))
+    useEffect(() => {
+        async function fetchData() {
+            const parser = (maker) => ({ label: maker.Name, value: maker.ID })
+            await http.get("/Make").then(response => setMake(response.data.map(parser)))
+        }
+        fetchData()
+    }, [])
 
-    //         await http.get("/Vehicles?Page=1").then(response => setVehicles(response.data))
-    //     }
-    //     fetchData()
-    // }, [])
+   const submit = (e) => {
+        e.preventDefault()
+    }
 
   return (      
     <div className="search-box">
@@ -121,19 +127,10 @@ function SearchBox() {
             </div>
 
             <div className="search-box__action-buttons">
-                <button type="submit">Ver Ofertas</button>
+                <button type="submit" onClick={(e) => submit(e)}>Ver Ofertas</button>
             </div>
         </Form>
 
-        {
-            vehicles.map(e => (
-                <div>
-
-                <h3>{e.Make}</h3>
-                <p>{e.Version}</p>
-                    </div>
-            ))
-        }
     </div>
   );
 }

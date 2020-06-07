@@ -22,6 +22,17 @@
             }
         }
     }
+
+    @media (max-width: 767px) {
+        padding: 30px 20px;
+    }
+
+    @media (max-width: 450px) {
+        &__action-buttons button{
+            width: 100%;
+            padding: 12px 50px;
+        }        
+    }
 }
 
 .check-box {
@@ -85,9 +96,14 @@
             > div { 
                 flex: 2;
             }
-            .react-select__control {
-                border-top-left-radius: 0;
-                border-bottom-left-radius: 0;
+            .react-select{
+                &__control {
+                    border-top-left-radius: 0;
+                    border-bottom-left-radius: 0;
+                }
+                &__placeholder {
+                    font-size: 13px;
+                }
             }
         }
 
@@ -95,6 +111,22 @@
             display: flex;
             > div { flex: 1 }
             > div:nth-child(2) { margin-left: 20px; }
+        }
+    }
+
+    @media (max-width: 767px) {
+        display: block;
+        &__fields + &__fields {
+            margin-left: 0
+        }
+    }
+
+    @media (max-width: 450px) {
+
+        &__fields--half {
+            display: block;
+            > div { margin-bottom: 20px }
+            > div:nth-child(2) { margin: 0;}
         }
     }
 }

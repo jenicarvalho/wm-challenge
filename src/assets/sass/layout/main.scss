@@ -1,4 +1,26 @@
 .page-home {
     @extend %container;
-    margin-top: 50px;
+    margin: 50px auto;
+
+    @media (max-width: 933px) {
+        width: 100%;
+        margin: 20px 10px;
+    }
+
+    .author {
+        margin: 30px auto 0;
+        width: 300px;
+        padding: 3px;
+        background-color: var(--light-gray-color);
+        text-align: center;
+        color: #fff;
+        font-weight: 300;
+        font-size: 15px;
+        a {
+            color: var(--lighter-gray-color);
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
 }

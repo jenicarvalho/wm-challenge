@@ -4,9 +4,7 @@ import { useField } from "@unform/core";
 
 const Select = ({ name, options, ...rest }) => {
   const selectRef = useRef(null);
-  const { fieldName, defaultValue, registerField, error } = useField(name);
-
-  console.log(defaultValue);
+  const { fieldName, defaultValue, registerField } = useField(name);
 
   useEffect(() => {
     registerField({

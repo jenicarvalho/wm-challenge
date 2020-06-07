@@ -2,4 +2,3 @@
 
 - React
 - Sass
-- Unform

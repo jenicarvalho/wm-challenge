@@ -4,7 +4,9 @@ body {
   background: var(--lighter-gray-color);
 }
 
-h1 { font-size: 1.9em }
+img {
+  max-width: 100%;
+}
 
 a {
   text-decoration: none;
