@@ -24,15 +24,15 @@ function SearchBox() {
         await http.get(`/Model?MakeID=${make.value}`).then(response => setModels(response.data.map(parser)))
     }
 
-    useEffect(() => {
-        async function fetchData() {
-            const parser = (maker) => ({ label: maker.Name, value: maker.ID })
-            await http.get("/Make").then(response => setMake(response.data.map(parser)))
+    // useEffect(() => {
+    //     async function fetchData() {
+    //         const parser = (maker) => ({ label: maker.Name, value: maker.ID })
+    //         await http.get("/Make").then(response => setMake(response.data.map(parser)))
 
-            await http.get("/Vehicles?Page=1").then(response => setVehicles(response.data))
-        }
-        fetchData()
-    }, [])
+    //         await http.get("/Vehicles?Page=1").then(response => setVehicles(response.data))
+    //     }
+    //     fetchData()
+    // }, [])
 
   return (      
     <div className="search-box">
